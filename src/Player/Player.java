@@ -1,8 +1,6 @@
 package Player;
 import Card.Card;
 
-import java.util.ArrayList;
-
 public class Player {
     Hand hand;
     public Player() {
@@ -21,6 +19,10 @@ public class Player {
         return this.hand;
     }
 
+    /**
+     * Function to remove all cards from a hand.
+     * Used for both dealer and player after each hand has completed.
+     */
     public void clearHand() {
         hand.removeAllCards();
     }

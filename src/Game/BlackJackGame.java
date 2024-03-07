@@ -1,7 +1,7 @@
+package Game;
 import Card.Deck;
 import Player.Dealer;
 import Player.HumanPlayer;
-import Player.Player;
 
 public class BlackJackGame {
     private Deck deck;
@@ -16,7 +16,7 @@ public class BlackJackGame {
 
     /**
      * This method is called at the beginning of every round.
-     * It is used to give the player and dealer their initial cards.
+     * Used to give the player and dealer their initial cards.
      */
     private void initialDeal(){
         player.clearHand();
@@ -28,10 +28,12 @@ public class BlackJackGame {
     }
 
     /**
-     * This method handles the game loop.
+     * This method handles the main game loop.
+     * Used every time a new round is started.
      */
     public void playRound() {
         System.out.println("------------------------------------");
+        // Print out the initial hands and deal the cards.
         System.out.println("You have " + player.getChips() + " chips.");
         initialDeal();
         printHiddenHands();
@@ -68,6 +70,10 @@ public class BlackJackGame {
         System.out.println("------------------------------------");
     }
 
+    /**
+     * This method prints out the dealer's visible hand.
+     * Used only when the dealer is waiting for player to finish their turn.
+     */
     private void printHiddenHands() {
         System.out.print("Dealer's ");
         dealer.getVisibleHand();
@@ -75,6 +81,10 @@ public class BlackJackGame {
         System.out.println("Your hand total: " + player.getHand().getHandTotal());
     }
 
+    /**
+     * This method reveals all cards, including the dealer's hidden hands.
+     * Used only when the player has finished their turn.
+     */
     private void printHands() {
         System.out.println("Dealers " + dealer.getHand());
         System.out.println("Player's " + player.getHand());
@@ -84,10 +94,12 @@ public class BlackJackGame {
 
     /**
      * This method takes each player's hand total and compares them together.
+     * Used when the dealer and player have both stopped playing, we can determine the results.
      */
     private void determineWinner() {
         int playerTotal = player.getHand().getHandTotal();
         int dealerTotal = dealer.getHand().getHandTotal();
+
         if(playerTotal == dealerTotal) {
             System.out.println("Push! Nothing lost and nothing gained.");
         } else if(playerTotal > dealerTotal) {

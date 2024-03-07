@@ -1,6 +1,5 @@
 package Player;
 import Card.Card;
-
 import java.util.ArrayList;
 
 public class Hand{
@@ -23,13 +22,16 @@ public class Hand{
     }
 
     /**
-     * This method will be used to clear the player and dealer's
-     * hand after each round.
+     * This method clears out the hands of either player.
+     * Used when the initial game loop has concluded.
      */
     public void removeAllCards() {
         cards.clear();
     }
 
+    /**
+     * Only show the first dealers card and use variable x for hidden cards.
+     */
     public void getDealerVisibleHand() {
         System.out.println(cards.get(0).toString() + " X(X)");
     }
@@ -40,7 +42,7 @@ public class Hand{
         for(Card card: cards) {
             hand.append(card.toString() + " ");
         }
-        return "hand: " + hand.toString();
+        return "hand: " + hand;
     }
 
 }
