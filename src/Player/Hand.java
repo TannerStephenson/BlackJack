@@ -30,6 +30,9 @@ public class Hand{
         cards.clear();
     }
 
+    /**
+     * Only show the first dealers card and use variable x for hidden cards.
+     */
     public void getDealerVisibleHand() {
         System.out.println(cards.get(0).toString() + " X(X)");
     }

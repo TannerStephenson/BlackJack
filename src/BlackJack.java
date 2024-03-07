@@ -2,7 +2,9 @@ import java.util.Scanner;
 
 public class BlackJack {
     public static void main(String[] args) {
+        // Read from the keyboard.
         Scanner kb = new Scanner(System.in);
+        // Initialize a new game.
         BlackJackGame game = new BlackJackGame();
         System.out.println("Hello and welcome to BlackJack!");
 
@@ -10,6 +12,8 @@ public class BlackJack {
                 "Please select an option:\n" +
                 "1. Play BlackJack\n" +
                 "2. Quit";
+
+        // Main game loop.
         boolean quit = false;
         while(!quit) {
             System.out.println(menu);

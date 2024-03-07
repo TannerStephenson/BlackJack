@@ -68,6 +68,9 @@ public class BlackJackGame {
         System.out.println("------------------------------------");
     }
 
+    /**
+     * This method is to be used only when the dealer has not started playing.
+     */
     private void printHiddenHands() {
         System.out.print("Dealer's ");
         dealer.getVisibleHand();
@@ -75,6 +78,9 @@ public class BlackJackGame {
         System.out.println("Your hand total: " + player.getHand().getHandTotal());
     }
 
+    /**
+     * Player has stopped hitting, so we can reveal all the cards now.
+     */
     private void printHands() {
         System.out.println("Dealers " + dealer.getHand());
         System.out.println("Player's " + player.getHand());
@@ -88,6 +94,7 @@ public class BlackJackGame {
     private void determineWinner() {
         int playerTotal = player.getHand().getHandTotal();
         int dealerTotal = dealer.getHand().getHandTotal();
+
         if(playerTotal == dealerTotal) {
             System.out.println("Push! Nothing lost and nothing gained.");
         } else if(playerTotal > dealerTotal) {

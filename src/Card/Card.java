@@ -15,7 +15,7 @@ public class Card {
 
     /**
      * This method is meant to translate our string values
-     * into integers.
+     * into card values.
      * @param rank: The value that will need to be translated.
      */
     private void setValue(String rank) {
