@@ -4,8 +4,9 @@ public class BlackJack {
     public static void main(String[] args) {
         Scanner kb = new Scanner(System.in);
         BlackJackGame game = new BlackJackGame();
+        System.out.println("Hello and welcome to BlackJack!");
 
-        String menu = "Hello and welcome to BlackJack!\n" +
+        String menu =
                 "Please select an option:\n" +
                 "1. Play BlackJack\n" +
                 "2. Quit";

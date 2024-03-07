@@ -46,10 +46,12 @@ public class BlackJackGame {
                 return;
             }
         }
+        System.out.println();
         // Determine if the dealer should play. If initially no, print hands before determining the winner.
         if(dealer.shouldHit()) {
             while (dealer.shouldHit()) {
                 dealer.hit(deck.dealCard());
+                System.out.println();
                 printHands();
                 // Check if the dealer has exceeded 21.
                 if (dealer.getHand().getHandTotal() > 21) {
@@ -61,7 +63,7 @@ public class BlackJackGame {
         } else {
             printHands();
         }
-
+        System.out.println();
         determineWinner();
         System.out.println("------------------------------------");
     }
