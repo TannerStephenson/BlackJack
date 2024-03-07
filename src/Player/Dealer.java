@@ -1,2 +1,4 @@
-package Player;public class Dealer {
+package Player;
+
+public class Dealer extends Player {
 }
