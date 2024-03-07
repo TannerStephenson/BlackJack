@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class Main {
+public class BlackJack {
     public static void main(String[] args) {
         Scanner kb = new Scanner(System.in);
         BlackJackGame game = new BlackJackGame();
