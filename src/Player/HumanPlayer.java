@@ -4,11 +4,32 @@ import java.util.Scanner;
 
 public class HumanPlayer extends Player {
     Scanner kb;
+    int chips;
     public HumanPlayer() {
         super();
         kb = new Scanner(System.in);
+        chips = 200;
     }
 
+    public int getChips() {
+        return this.chips;
+    }
+
+    public void playerWins() {
+        this.chips += 10;
+        System.out.println("You win 10 chips!");
+    }
+
+    public void playerBusts() {
+        this.chips -= 10;
+        System.out.println("You lose 10 chips!");
+    }
+
+    /**
+     * Method that waits for player to choose if
+     * they want to hit or stay.
+     * @return a boolean that indicates if we should keep adding to the hand or not.
+     */
     public boolean wantToHit(){
         int choice = 0;
         boolean validInput = false;

@@ -21,4 +21,8 @@ public class Player {
         return this.hand;
     }
 
+    public void clearHand() {
+        hand.removeAllCards();
+    }
+
 }

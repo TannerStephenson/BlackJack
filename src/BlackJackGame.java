@@ -15,13 +15,28 @@ public class BlackJackGame {
     }
 
     private void initialDeal(){
-        
+        player.clearHand();
+        dealer.clearHand();
         player.hit(deck.dealCard());
         dealer.hit(deck.dealCard());
         player.hit(deck.dealCard());
         dealer.hit(deck.dealCard());
     }
     public void playRound() {
-
+        initialDeal();
+        while(player.wantToHit()) {
+            player.hit(deck.dealCard());
+            if(player.getHand().getHandTotal() > 21) {
+                player.playerBusts();
+                return;
+            }
+        }
+        while(dealer.shouldHit()) {
+            dealer.hit(deck.dealCard());
+            if(dealer.getHand().getHandTotal() > 21) {
+                player.playerWins();
+                return;
+            }
+        }
     }
 }
