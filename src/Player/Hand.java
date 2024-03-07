@@ -30,4 +30,17 @@ public class Hand{
         cards.clear();
     }
 
+    public void getDealerVisibleHand() {
+        System.out.println(cards.get(0).toString() + " X(X)");
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder hand = new StringBuilder();
+        for(Card card: cards) {
+            hand.append(card.toString() + " ");
+        }
+        return "hand: " + hand.toString();
+    }
+
 }

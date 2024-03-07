@@ -11,4 +11,8 @@ public class Dealer extends Player {
     public boolean shouldHit() {
         return getHand().getHandTotal() < 17;
     }
+
+    public void getVisibleHand() {
+        getHand().getDealerVisibleHand();
+    }
 }

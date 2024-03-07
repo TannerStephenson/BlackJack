@@ -10,7 +10,7 @@ public class Player {
     }
 
     /**
-     * Method for when a player requests a new hand.
+     * Method for when a player requests a new card.
      * @param card: The card to be added to the player's hand.
      */
     public void hit(Card card) {

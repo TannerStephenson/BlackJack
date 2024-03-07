@@ -22,7 +22,12 @@ public class HumanPlayer extends Player {
 
     public void playerBusts() {
         this.chips -= 10;
-        System.out.println("You lose 10 chips!");
+        System.out.println("Bust! You lose 10 chips!");
+    }
+
+    public void playerLoses() {
+        this.chips -= 10;
+        System.out.println("Dealer wins! You lose 10 chips!");
     }
 
     /**

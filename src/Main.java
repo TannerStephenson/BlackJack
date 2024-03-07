@@ -12,19 +12,24 @@ public class Main {
         boolean quit = false;
         while(!quit) {
             System.out.println(menu);
-            int choice = kb.nextInt();
-            kb.nextLine();
+            try {
+                int choice = kb.nextInt();
+                kb.nextLine();
 
-            switch(choice) {
-                case 1:
-                    game.playRound();
-                    break;
-                case 2:
-                    quit = true;
-                    break;
-                default:
-                    System.out.println("Invalid choice. Please select either 1 or 2.");
-                    break;
+                switch (choice) {
+                    case 1:
+                        game.playRound();
+                        break;
+                    case 2:
+                        quit = true;
+                        break;
+                    default:
+                        System.out.println("Invalid choice. Please select either 1 or 2.");
+                        break;
+                }
+            } catch (Exception e) {
+                System.out.println("Invalid input. Please enter a valid number.");
+                kb.nextLine();
             }
         }
         kb.close();
