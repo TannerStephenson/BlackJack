@@ -1,5 +1,4 @@
 package Player;
-
 import java.util.Scanner;
 
 public class HumanPlayer extends Player {
